@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blank PDF Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Blank PDF Generator</h1>
+    <p class="subtitle">產生指定頁數的空白 PDF，立即下載。</p>
+
+    <div class="form">
+
+      <!-- 頁面尺寸 -->
+      <div class="field">
+        <label for="pageSize">頁面尺寸</label>
+        <select id="pageSize">
+          <option value="a4" selected>A4 (210 × 297 mm)</option>
+          <option value="a3">A3 (297 × 420 mm)</option>
+          <option value="a5">A5 (148 × 210 mm)</option>
+          <option value="letter">Letter (216 × 279 mm)</option>
+          <option value="legal">Legal (216 × 356 mm)</option>
+          <option value="b5"  >B5 (176 × 250 mm)</option>
+        </select>
+      </div>
+
+      <!-- 頁數 -->
+      <div class="field">
+        <label for="pageCount">頁數</label>
+        <input type="number" id="pageCount" min="1" max="9999" value="1" />
+      </div>
+
+      <!-- 邊界 -->
+      <div class="field">
+        <label for="margin">邊界（mm）</label>
+        <input type="number" id="margin" min="0" max="100" value="10" />
+      </div>
+
+      <!-- 檔名 -->
+      <div class="field">
+        <label for="filename">檔名</label>
+        <div class="filename-row">
+          <input type="text" id="filename" value="blank" placeholder="檔名（不含 .pdf）" />
+          <span class="ext">.pdf</span>
+        </div>
+      </div>
+
+      <!-- 按鈕 -->
+      <button id="generateBtn" onclick="generatePDF()">產生並下載 PDF</button>
+
+      <!-- 狀態訊息 -->
+      <p id="status" class="status"></p>
+    </div>
+  </div>
+
+  <!-- jsPDF CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

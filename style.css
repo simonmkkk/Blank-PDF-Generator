@@ -1,0 +1,129 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f7f7f7;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Container ===== */
+.container {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 440px;
+}
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* ===== Form ===== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #444;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+  background: #fff;
+}
+
+input:focus,
+select:focus {
+  border-color: #555;
+}
+
+/* ===== Filename row ===== */
+.filename-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.filename-row input {
+  flex: 1;
+}
+
+.ext {
+  font-size: 0.9rem;
+  color: #888;
+  white-space: nowrap;
+}
+
+/* ===== Button ===== */
+button {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.65rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+button:hover {
+  background: #333;
+}
+
+button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+/* ===== Status ===== */
+.status {
+  font-size: 0.85rem;
+  min-height: 1.2rem;
+  color: #444;
+  text-align: center;
+}
+
+.status.error {
+  color: #c00;
+}
+
+.status.success {
+  color: #080;
+}
