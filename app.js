@@ -3,9 +3,6 @@
  * 使用 jsPDF (UMD) 在瀏覽器產生空白 PDF
  */
 
-// jsPDF 在 UMD 模式下掛載於 window.jspdf.jsPDF
-const { jsPDF } = window.jspdf;
-
 // 各尺寸對應 jsPDF 格式名稱
 const SIZE_MAP = {
   a3:     'a3',
@@ -23,6 +20,12 @@ function setStatus(msg, type = '') {
 }
 
 function generatePDF() {
+  // 每次呼叫時才取得 jsPDF，確保 CDN 已載入
+  if (!window.jspdf || !window.jspdf.jsPDF) {
+    setStatus('PDF 函式庫尚未載入，請重新整理頁面。', 'error');
+    return;
+  }
+  const { jsPDF } = window.jspdf;
   const sizeKey   = document.getElementById('pageSize').value;
   const pageCount = parseInt(document.getElementById('pageCount').value, 10);
   const filename  = (document.getElementById('filename').value.trim() || 'blank') + '.pdf';
