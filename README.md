@@ -1,6 +1,6 @@
 # Blank PDF Generator
 
-A minimal web tool to generate blank PDFs with customizable page count and margin — runs entirely in the browser.
+A minimal web tool to generate blank PDFs with customizable page count — runs entirely in the browser.
 
 🔗 **Live site**: https://simonmkkk.github.io/Blank-PDF-Generator/
 
@@ -8,7 +8,6 @@ A minimal web tool to generate blank PDFs with customizable page count and margi
 
 - Multiple page sizes: A3, **A4 (default)**, A5, Letter, Legal, B5
 - Custom page count (1 – 9999)
-- Custom margin size (mm)
 - Custom output filename
 - 100% client-side — no server required
 
